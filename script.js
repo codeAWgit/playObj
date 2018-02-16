@@ -8,9 +8,9 @@ class Fill{
             }
         }
         
-        this.makeAllSix = () => {
+        this.makeAllOneNum = (num) => {
             this.smallArr = this.smallArr.map(()=>{
-                return 6
+                return num
             })
         }
     }
@@ -30,13 +30,13 @@ $(() => {
     
     $('#output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>') 
     
-    arr.makeAllSix()
+    arr.makeAllOneNum(1)
     
     $('#output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>')
     
-    $('button').on('click', () => {
-        $('#output').css('display','none')
-    })
+//    $('button').on('click', () => {
+//        $('#output').css('display','none')
+//    })
     
     
     

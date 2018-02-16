@@ -42,9 +42,14 @@ div{
     <div class = "col-6 text-left displayArea">
 	<h2>Function output:</h2>
         
-      <h4 id="output" class="text-left"></h4>
+    <h4 id="output" class="text-left"></h4>
+    <h4 id="output2" class="text-left"></h4>
         
-        <button>Clear output</button>
+        <button onclick='arr.makeAllOneNum(2)
+                  document.getElementById("output2").innerHTML = "new smallArr = " + arr.smallArr'
+            >Add array</button>
+        
+        <button onclick='document.getElementById("output").style.display = "none"'>Clear</button>
   
     </div>
   <div class = "col"></div>
