@@ -4,7 +4,7 @@ class Fill{
         
         this.makeFive = ()=>{
             for(var i=this.smallArr.length; i<5; i++){
-                this.smallArr.push(10)
+                this.smallArr.push('')
             }
         }
         
@@ -28,17 +28,21 @@ $(() => {
     
     arr.makeFive()
     
-    $('#output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>') 
+    $('#output').append('<div>[ ' + arr.smallArr + ' ]</div>') 
     
     arr.makeAllOneNum(1)
     
-    $('#output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>')
+    $('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
     
 //    $('button').on('click', () => {
 //        $('#output').css('display','none')
 //    })
     
-    
+    setTimeout(()=>{
+        alert( arr.smallArr['0'] ** 2 == 1 ? "hi Dan" : "bye Dan")
+        arr.otherKey = "About done with this timeout."
+        $('#output').append(arr.otherKey)
+    }, 5000)
     
 
 })
