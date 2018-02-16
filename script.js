@@ -1,25 +1,35 @@
 class Fill{
     constructor(arr){
-        this.arr = arr
+        this.smallArr = arr
         this.makeFive = ()=>{
-            for(var i=this.arr.length; i<5; i++){
-                this.arr.push(10)
+            for(var i=this.smallArr.length; i<5; i++){
+                this.smallArr.push(10)
             }
+        }
+        this.makeAllSix = () => {
+            this.smallArr = this.smallArr.map(()=>{
+                return 6
+            })
         }
     }
 }
 
-let arr = new Array(1,3,5)
-arr2 = new Fill(arr)
+let harray = new Array(1,3,5)
+arr = new Fill(harray)
 
-arr2.makeFive()
+
 
 $(() => {
     'use strict'
     
-    $('.output').text(JSON.stringify(arr2))
-    $('.output').append('[' + arr2.arr.join(', ') + ']')
+    $('.output').text(JSON.stringify(arr))
     
-    console.log(arr2)  
+    arr.makeFive()
+    
+    $('.output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>') 
+    
+    arr.makeAllSix()
+    
+    $('.output').append('<div>[ ' + arr.smallArr.join(', ') + ' ]</div>') 
 })
 
