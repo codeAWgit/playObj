@@ -40,8 +40,9 @@ $(() => {
     
     setTimeout(()=>{
         alert( arr.smallArr['0'] ** 2 == 1 ? "hi Dan" : "bye Dan")
-        arr.otherKey = "About done with this timeout."
-        $('#output').append(arr.otherKey)
+        arr.otherKey = "About done with " +
+        "this timeout."                   //<--Preferred way to line 
+        $('#output').append(arr.otherKey)   //-break a string in JS.
     }, 5000)
     
 
