@@ -1,0 +1,18 @@
+h2{
+    margin: 20px;
+} 
+h4 {
+    margin: 15px;
+}
+h6 {
+    margin-top: 115px;
+}    
+.displayArea{
+    padding: 25px 25px;
+    border-left: solid;
+    border-right: dotted;
+    border-bottom: dashed;
+}
+div{
+    padding: 15px 0px 0px 0px;
+}    
