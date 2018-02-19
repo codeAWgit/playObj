@@ -54,15 +54,23 @@ $(() => {
     
     //debugger
     
-    let timeout = setTimeout(() => {
-        alert( arr.smallArr[0] ** 2 == 1 ? 'hi Dan' : 'bye Dan')
+    // let timeout = setTimeout(() => {
+    //     alert( arr.smallArr[0] ** 2 == 1 ? 'hi Dan' : 'bye Dan')
         
-        arr.otherKey = "About done with " + //<--Preferred way to line
-        "this timeout."                        //-break a string in JS.
-        //$('#output').append(arr.otherKey)   
-        $('#output').append('<br/><p>Five factorial is: ' + 
-                            factorialize(5) + '</p>')
-        $('#output').append('<p>Ten factorial is: ' + 
-                            factorialize(10) + '</p>')
-    }, 2000)
+    //     arr.otherKey = "About done with " + //<--Preferred way to line
+    //     "this timeout."                        //-break a string in JS.
+    //     //$('#output').append(arr.otherKey)   
+    //     $('#output').append('<br/><p>Five factorial is: ' + 
+    //                         factorialize(5) + '</p>')
+    //     $('#output').append('<p>Ten factorial is: ' + 
+    //                         factorialize(10) + '</p>')
+    // }, 2000)
+
+let findLongestWord = (str) => {
+    return Math.max.apply(null, str.split(' ').map(x => x.length));
+    }
+    
+let tmp = findLongestWord("The quick brown fox jumped over the lazy dog");
+      
+$('#output').append(tmp)
 })
