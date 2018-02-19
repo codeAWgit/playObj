@@ -71,6 +71,5 @@ let findLongestWord = (str) => {
     }
     
 let tmp = findLongestWord("The quick brown fox jumped over the lazy dog");
-      
 $('#output').append(tmp)
 })
