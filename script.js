@@ -66,9 +66,27 @@ $(() => {
     //                         factorialize(10) + '</p>')
     // }, 2000)
 
-let largestOfFour = (arr) => {
-    return arr.map(x => Math.max.apply(null, x))
+    //Example of a closure to access and increase a local variable in the self-invoked function.
+let largestOfFour = (() => {
+    let counter = 0
+    return function () {
+        return ++counter
     }
+})()
 
-$('#output').append(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]))
+largestOfFour()
+
+document.getElementById('output').innerHTML += largestOfFour()
+
+
+    //Example of using continue in a for loop to jump over certain numbers and keep them from 
+    //  concating to the text string to later be output to the screen.
+// var text = "";
+// var i;
+// for (i = 1; i < 10; i++) {
+//     if (i === 5 || i === 7) continue
+//     text += i + "<br>"
+// }
+
+// document.getElementById("output").innerHTML += text
 })
