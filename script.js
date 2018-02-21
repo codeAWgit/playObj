@@ -75,9 +75,9 @@ let largestOfFour = (() => {
 })()
 
 largestOfFour()
-
+debugger
 document.getElementById('output').innerHTML += largestOfFour()
-
+debugger
 
     //Example of using continue in a for loop to jump over certain numbers and keep them from 
     //  concating to the text string to later be output to the screen.

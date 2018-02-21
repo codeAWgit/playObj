@@ -6,17 +6,17 @@
     "configurations": [
         {
             "type": "chrome",
-            "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 3000,
-            "webRoot": "${workspaceFolder}"
+            "request": "launch",
+            "name": "Launch Chrome",
+            "file": "${workspaceFolder}/index.html",
+            "sourceMaps": false
         }
-        // ,
         // {
-        //     "type": "node",
+        //     "name": "Launch index.html (disable sourcemaps)",
+        //     "type": "chrome",
         //     "request": "launch",
-        //     "name": "Launch Program",
-        //     "program": "${workspaceFolder}/script.js"
+        //     //"sourceMaps": false,
+        //     "file": "${workspaceFolder}/index.html"
         // }
     ]
 }
