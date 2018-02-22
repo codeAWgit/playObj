@@ -90,19 +90,30 @@ $( () => {
 
 // document.getElementById("output").innerHTML += text
 
-let person = {
-    firstName:"John",
-    lastName: "Doe",
-    fullName: function() {
-        return this.firstName + " " + this.lastName
+// let person = {
+//     firstName:"John",
+//     lastName: "Doe",
+//     fullName: function() {
+//         return this.firstName + " " + this.lastName
+//     }
+// }
+
+// let myObject = {
+//     firstName:"Mary",
+//     lastName: "Doe"
+// }
+
+// document.getElementById("output").innerHTML += person.fullName.call(myObject)
+
+let chunkArrayInGroups = (arr, size) => {
+    let newRay = []
+    
+    while( arr.length ) { 
+        newRay.push(arr.splice(0,size))
     }
+    return newRay
 }
-
-let myObject = {
-    firstName:"Mary",
-    lastName: "Doe"
-}
-
-document.getElementById("output").innerHTML += person.fullName.call(myObject)
+  
+console.error(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
 
 })
