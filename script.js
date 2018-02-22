@@ -42,7 +42,8 @@ function factorialize(num) {
 let factorialize = (num) => {		
 	return (num === 1 || num === 0 ? 1 : num * factorialize(num - 1))
 }
-$(() => {    
+
+$( () => {    
     let stringArr = JSON.stringify(arr)
     $('#output').text(stringArr)
     
@@ -67,16 +68,16 @@ $(() => {
     // }, 2000)
 
     //Example of a closure to access and increase a local variable in the self-invoked function.
-let largestOfFour = (() => {
-    let counter = 0
-    return function () {
-        return ++counter
-    }
-})()
+// let largestOfFour = (() => {
+//     let counter = 0
+//     return function () {
+//         return ++counter
+//     }
+// })()
 
-largestOfFour()
+// largestOfFour()
 
-document.getElementById('output').innerHTML += largestOfFour()
+// document.getElementById('output').innerHTML += largestOfFour()
 
     //Example of using continue in a for loop to jump over certain numbers and keep them from 
     //  concating to the text string to later be output to the screen.
@@ -88,4 +89,20 @@ document.getElementById('output').innerHTML += largestOfFour()
 // }
 
 // document.getElementById("output").innerHTML += text
+
+let person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function() {
+        return this.firstName + " " + this.lastName
+    }
+}
+
+let myObject = {
+    firstName:"Mary",
+    lastName: "Doe"
+}
+
+document.getElementById("output").innerHTML += person.fullName.call(myObject)
+
 })
