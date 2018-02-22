@@ -66,7 +66,7 @@ $(() => {
     //                         factorialize(10) + '</p>')
     // }, 2000)
 
-    //Example of a closure to access and increase a local variable in the self-invoked function.
+    //Example of a closure to access & increase a local variable in the self-invoked function.
 let largestOfFour = (() => {
     let counter = 0
     return function () {
@@ -78,8 +78,8 @@ largestOfFour()
 
 document.getElementById('output').innerHTML += largestOfFour()
 
-    //Example of using continue in a for loop to jump over certain numbers and keep them from 
-    //  concating to the text string to later be output to the screen.
+    //Example of using continue in a for loop to jump over certain numbers & keep them from 
+    //  adding to the text string to later output to the screen.
 // var text = "";
 // var i;
 // for (i = 1; i < 10; i++) {
