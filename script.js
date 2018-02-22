@@ -42,7 +42,8 @@ function factorialize(num) {
 let factorialize = (num) => {		
 	return (num === 1 || num === 0 ? 1 : num * factorialize(num - 1))
 }
-$(() => {    
+
+$( () => {    
     let stringArr = JSON.stringify(arr)
     $('#output').text(stringArr)
     
@@ -74,9 +75,9 @@ let largestOfFour = (() => {
     }
 })()
 
-largestOfFour()
+// largestOfFour()
 
-document.getElementById('output').innerHTML += largestOfFour()
+// document.getElementById('output').innerHTML += largestOfFour()
 
     //Example of using continue in a for loop to jump over certain numbers & keep them from 
     //  adding to the text string to later output to the screen.
@@ -88,4 +89,31 @@ document.getElementById('output').innerHTML += largestOfFour()
 // }
 
 // document.getElementById("output").innerHTML += text
+
+// let person = {
+//     firstName:"John",
+//     lastName: "Doe",
+//     fullName: function() {
+//         return this.firstName + " " + this.lastName
+//     }
+// }
+
+// let myObject = {
+//     firstName:"Mary",
+//     lastName: "Doe"
+// }
+
+// document.getElementById("output").innerHTML += person.fullName.call(myObject)
+
+let chunkArrayInGroups = (arr, size) => {
+    let newRay = []
+    
+    while( arr.length ) { 
+        newRay.push(arr.splice(0,size))
+    }
+    return newRay
+}
+  
+console.error(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
+
 })
