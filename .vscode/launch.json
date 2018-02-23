@@ -8,7 +8,7 @@
             "name": "Launch index.html (disable sourcemaps)",
             "type": "chrome",
             "request": "launch",
-            //"sourceMaps": false,
+            "sourceMaps": false,
             "file": "${workspaceFolder}/index.html"
         }
     ]

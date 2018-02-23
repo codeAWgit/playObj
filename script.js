@@ -2,6 +2,10 @@
 
 //#region class Fill constructor 
 class Fill {
+    /**
+     * JSDOC comment
+     * @param {Array} arr 
+     */
     constructor(arr) {                    // Region to initialize class objects.           
         //if (arr === undefined) {arr = []}   Good to initialize params.
         this.smallArr = arr || []         // This does the same as the previous extra line above.
@@ -52,7 +56,9 @@ function factorialize(num) {
 //})
 
 window.onload = function() {                // Main outputs for index.html
-    let stringArr = JSON.stringify(arr)
+    let stringArr = JSON.stringify(arr, null, 2)
+    console.count()
+    console.log(stringArr)
     let outputDOM = document.getElementById('output')
     outputDOM.innerHTML = stringArr 
     //$('#output').text(stringArr)
