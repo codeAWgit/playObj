@@ -57,8 +57,7 @@ function factorialize(num) {
 
 window.onload = function() {                // Main outputs for index.html
     let stringArr = JSON.stringify(arr, null, 2)
-    console.count()
-    console.log(stringArr)
+
     let outputDOM = document.getElementById('output')
     outputDOM.innerHTML = stringArr 
     //$('#output').text(stringArr)
@@ -85,14 +84,14 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 
     //#region Closure example to access, increase a local variable in the self-invoked function.
-    // let largestOfFour = ( () => {
-    //     let counter = 0
-    //     return function () {
-    //         return ++counter
-    //     }
-    // })()
+     let largestOfFour = ( () => {
+         let counter = 0
+         return function () {
+             return ++counter
+         }
+     })()
 
-    // outputDOM.innerHTML += largestOfFour()
+     document.getElementById('output2').innerHTML = largestOfFour()
     //#endregion
 
     //#region    Test code region 
