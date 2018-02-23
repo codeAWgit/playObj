@@ -84,14 +84,28 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 
     //#region Closure example to access, increase a local variable in the self-invoked function.
-     let largestOfFour = ( () => {
+     let chgCounterClosure = ( () => {
          let counter = 0
-         return function () {
-             return ++counter
+         return {
+             count: function(){
+                 return counter
+             },
+             inc: function() {
+                 counter++
+             },
+             dec: function() {
+                 counter--
+             }
          }
      })()
+     
+     chgCounterClosure.count()
+     chgCounterClosure.inc()
+     chgCounterClosure.inc()
+     chgCounterClosure.count()
+     chgCounterClosure.dec()
 
-     document.getElementById('output2').innerHTML = largestOfFour()
+    document.getElementById('output').innerHTML += '<br/>' + chgCounterClosure.count()
     //#endregion
 
     //#region    Test code region 
