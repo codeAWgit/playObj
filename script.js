@@ -85,14 +85,14 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 
     //#region Closure example to access, increase a local variable in the self-invoked function.
-    let largestOfFour = ( () => {
-        let counter = 0
-        return function () {
-            return ++counter
-        }
-    })()
+    // let largestOfFour = ( () => {
+    //     let counter = 0
+    //     return function () {
+    //         return ++counter
+    //     }
+    // })()
 
-    outputDOM.innerHTML += largestOfFour()
+    // outputDOM.innerHTML += largestOfFour()
     //#endregion
 
     //#region    Test code region 
@@ -134,6 +134,12 @@ window.onload = function() {                // Main outputs for index.html
     // }
     
     // console.error(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
+    
+    // let bouncer = (arr) => {
+    //     return arr.filter( x => x )
+    //   }
+      
+    // console.error(bouncer([7, "ate", "", false, 9]))
     //#endregion
-
 }
+
