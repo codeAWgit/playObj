@@ -5,46 +5,46 @@
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <!-- jQuery  
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     -->
     <!--
-     Link to external script file I created.
-    <script src="file://C:/Users/aHob/Documents/GitHub/playObj/script.js"></script>
-    <script src="file://C:/Users/A/Documents/GitHub/playObj/script.js"></script>
+        Link to external script file I created.
+        <script src="file://C:/Users/aHob/Documents/GitHub/playObj/script.js"></script>
+        <script src="file://C:/Users/A/Documents/GitHub/playObj/script.js"></script>
     -->
     <link rel="stylesheet" href="style.css">
-
+    
     <script src="script.js"></script>
 </head>
-	
+
 <body>
-<div class="container-fluid">
-    <div class = "row text-center">
-        <div class = "col"></div>
-        <div class = "col-6 text-left displayArea">
-            <!-- <h4 id="num"></h4> -->
-            <h2>Function output:</h2>
-            <h4 id="output"></h4>
-        
-            <button onclick='arr.makeAllOneNum(2)
+    <div class="container-fluid">
+        <div class = "row text-center">
+            <div class = "col"></div>
+            <div class = "col-6 text-left displayArea">
+                <!-- <h4 id="num"></h4> -->
+                <h2>Function output:</h2>
+                <h4 id="output"></h4>
+                
+                <button onclick='arr.makeAllOneNum(2)
                 document.getElementById("output2").innerHTML =
                 "<br>new smallArr = " + arr.smallArr'>
                 Add array</button>
                 
-            <h4 id="output2"></h4>
-
-            <button onclick='clrWork()'>Clear</button>
+                <h4 id="output2"></h4>
+                
+                <button onclick='clrWork()'>Clear</button>
+            </div>
+            <div class = "col"></div>
         </div>
-        <div class = "col"></div>
     </div>
-</div>
-<script>
-    function clrWork() {
-        document.getElementById("output").style.display = "none"
-        document.getElementById("output2").style.display = "none"
-    }
-</script>
+    <script>
+        function clrWork() {
+            document.getElementById("output").style.display = "none"
+            document.getElementById("output2").style.display = "none"
+        }
+    </script>
 </body>
 </html>
-    
+
 <!--    Code written by Adam Hobson.    -->
