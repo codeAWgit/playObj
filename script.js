@@ -67,7 +67,7 @@ window.onload = function() {                // Main outputs for index.html
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>') 
     
     arr.makeAllOneNum(1)
-    outputDOM.innerHTML += '<div>[ ' + arr.smallArr + ' ]</div>'
+    outputDOM.innerHTML += '<div>[ ' + arr.smallArr + ' ]</div>';
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
 
     
@@ -84,28 +84,40 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 
     //#region Closure example to access, increase a local variable in the self-invoked function.
-     let chgCounterClosure = ( () => {
-         let counter = 0
-         return {
-             count: function(){
-                 return counter
-             },
-             inc: function() {
-                 counter++
-             },
-             dec: function() {
-                 counter--
-             }
-         }
-     })()
+    //  let chgCounterClosure = ( () => {
+    //      let counter = 0
+    //      return {
+    //          count: function(){
+    //              return counter
+    //          },
+    //          inc: function() {
+    //              counter++
+    //          },
+    //          dec: function() {
+    //              counter--
+    //          }
+    //      }
+    //  })()
      
-     chgCounterClosure.count()
-     chgCounterClosure.inc()
-     chgCounterClosure.inc()
-     chgCounterClosure.count()
-     chgCounterClosure.dec()
+    //  chgCounterClosure.count()
+    //  chgCounterClosure.inc()
+    //  chgCounterClosure.inc()
+    //  chgCounterClosure.count()
+    //  chgCounterClosure.dec()
 
-    document.getElementById('output').innerHTML += '<br/>' + chgCounterClosure.count()
+    // document.getElementById('output').innerHTML += '<br/>' + chgCounterClosure.count()
+    //#endregion
+    //#region   IIFEs  
+    (function () {
+        console.log("My favorite number is 3");
+      })()
+
+    let favNumber
+    (favNumber = function(num = 4) {
+        console.log("My favorite number is " + num);
+      })()
+      
+    favNumber(11)
     //#endregion
 
     //#region    Test code region 
@@ -156,3 +168,56 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 }
 
+//#region saved VS code settings
+// User settings
+// {
+//     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+//     "workbench.activityBar.visible": true,
+//     "window.menuBarVisibility": "default",
+//     "editor.wordWrap": "on",
+//     "window.zoomLevel": 0.1,
+//     "git.autofetch": true,
+//     "diffEditor.ignoreTrimWhitespace": true
+// }
+
+//Keybindings.JSON
+// Place your key bindings in this file to overwrite the defaults
+// [
+//     {
+//         "key": "ctrl+w",
+//         "command": "workbench.action.toggleZenMode"
+//     },
+//     {
+//         "key": "ctrl+k z",
+//         "command": "-workbench.action.toggleZenMode"
+//     },
+//     {
+//         "key": "ctrl+alt+s",
+//         "command": "workbench.action.files.saveAll"
+//     },
+//     {
+//         "key": "ctrl+k s",
+//         "command": "-workbench.action.files.saveAll"
+//     },
+//     {
+//         "key": "ctrl+g",
+//         "command": "editor.foldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+k ctrl+0",
+//         "command": "-editor.foldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+l",
+//         "command": "editor.unfoldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+k ctrl+j",
+//         "command": "-editor.unfoldAll",
+//         "when": "editorTextFocus"
+//     }
+// ]
+//#endregion
