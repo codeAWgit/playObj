@@ -1,5 +1,8 @@
 'use strict';
-
+function clrWork() {
+    document.getElementById("output").style.display = "none"
+    document.getElementById("output2").style.display = "none"
+}
 //#region class Fill constructor 
 class Fill {
     /**
@@ -59,15 +62,15 @@ window.onload = function() {                // Main outputs for index.html
     let stringArr = JSON.stringify(arr, null, 2)
 
     let outputDOM = document.getElementById('output')
-    outputDOM.innerHTML = stringArr 
+    outputDOM.innerHTML = '<p> ' + stringArr + ' </p>' 
     //$('#output').text(stringArr)
     
     arr.makeFive()
-    outputDOM.innerHTML += '<div>[ ' + arr.smallArr + ' ]</div>'
+    outputDOM.innerHTML += '<p>[ ' + arr.smallArr + ' ]</p>'
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>') 
     
     arr.makeAllOneNum(1)
-    outputDOM.innerHTML += '<div>[ ' + arr.smallArr + ' ]</div>';
+    outputDOM.innerHTML += '<p>[ ' + arr.smallArr + ' ]</p>';
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
 
     
