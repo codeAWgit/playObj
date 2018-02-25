@@ -162,12 +162,17 @@ window.onload = function() {                // Main outputs for index.html
     // }
     
     // console.error(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
-    
-    // let bouncer = (arr) => {
-    //     return arr.filter( x => x )
-    //   }
+
+    const fact = (n, acc = 1) => {
+        if (n < 2) return acc
+
+        while(1 < n--){
+            acc *= n + 1
+        }
+        return acc
+      }
       
-    // console.error(bouncer([7, "ate", "", false, 9]))
+    console.error(fact(5))
     //#endregion
 }
 
