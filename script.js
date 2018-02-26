@@ -111,16 +111,16 @@ window.onload = function() {                // Main outputs for index.html
     // document.getElementById('output').innerHTML += '<br/>' + chgCounterClosure.count()
     //#endregion
     //#region   IIFEs  
-    (function () {
-        console.log("My favorite number is 3");
-      })()
+    // (function () {
+    //     console.log("My favorite number is 3");
+    //   })()
 
-    let favNumber
-    (favNumber = function(num = 4) {
-        console.log("My favorite number is " + num);
-      })()
+    // let favNumber
+    // (favNumber = function(num = 4) {
+    //     console.log("My favorite number is " + num);
+    //   })()
       
-    favNumber(11)
+    // favNumber(11)
     //#endregion
 
     //#region    Test code region 
@@ -152,27 +152,35 @@ window.onload = function() {                // Main outputs for index.html
 
     // document.getElementById("output").innerHTML += person.fullName.call(myObject)
 
-    // let chunkArrayInGroups = (arr, size) => {
-    //     let newRay = []
-        
-    //     while( arr.length ) { 
-    //         newRay.push(arr.splice(0,size))
-    //     }
-    //     return newRay
-    // }
-    
-    // console.error(chunkArrayInGroups(["a", "b", "c", "d", "e"], 2));
+    const a = Object.freeze(['11','22','33']);
+    const [n, ...nums] = a;   
 
-    const fact = (n, acc = 1) => {
-        if (n < 2) return acc
+    console.log(nums)
 
-        while(1 < n--){
-            acc *= n + 1
-        }
-        return acc
-      }
-      
-    console.error(fact(5))
+    const head = ([x]) => x
+
+    console.log(head([1,2,3]))
+
+
+        /**
+         * JSDOC comment
+         * @param {number} x
+         */
+    const add = x => y => x + y
+    const add3 = add(3)
+    console.log(add3(9))
+
+
+        /**
+         * JSDOC comment
+         * @param {Function} funcz
+         *  @param {number} a
+         */
+    const partial = (funcz, a) => funcz(a)
+    const add9 = partial(add, 9)
+    console.log(add9(9))
+// https://www.youtube.com/watch?v=FYXpOjwYzcs   34 min mark
+
     //#endregion
 }
 
