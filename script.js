@@ -155,18 +155,24 @@ window.onload = function() {                // Main outputs for index.html
     const a = Object.freeze(['11','22','33']);
     const [n, ...nums] = a;   
 
-    console.log(nums)
+    console.log(n)
 
-    const head = ([x]) => x
+    const head = ([x, ...rest]) => rest
 
-    console.log(head([1,2,3]))
+    console.log(head(a))
 
 
         /**
          * JSDOC comment
          * @param {number} x
          */
-    const add = x => y => x + y
+    const add = x => {
+            /**
+             * JSDOC comment
+             * @param {number} y
+             */
+        return y => x + y
+    }
     const add3 = add(3)
     console.log(add3(9))
 
