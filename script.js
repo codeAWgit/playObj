@@ -59,7 +59,7 @@ function factorialize(num) {
 //})
 
 window.onload = function() {                // Main outputs for index.html
-    let stringArr = JSON.stringify(arr, null, 2)
+    let stringArr = JSON.stringify(arr, null, 3)
 
     let outputDOM = document.getElementById('output')
     outputDOM.innerHTML = '<p> ' + stringArr + ' </p>' 
@@ -70,6 +70,12 @@ window.onload = function() {                // Main outputs for index.html
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>') 
     
     arr.makeAllOneNum(1)
+   
+    var obj = {};
+    Object.defineProperty(obj, "x", {value:0, writable:false});
+    console.log(obj.x)
+    //obj.x = 3.14;
+    
     outputDOM.innerHTML += '<p>[ ' + arr.smallArr + ' ]</p>';
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
 
