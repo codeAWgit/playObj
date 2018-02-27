@@ -9,11 +9,10 @@ class Fill {
      * JSDOC comment
      * @param {Array} arr 
      */
-    constructor(arr) {                    // Region to initialize class objects.           
-        //if (arr === undefined) {arr = []}   Good to initialize params.
-        this.smallArr = arr || []         // This does the same as the previous extra line above.
+    constructor(arr) {            
+        this.smallArr = arr || []
     }
-    makeFive() {                          // Region where methods exist and how their syntax looks.
+    makeFive() {           // Region where methods exist and what their syntax is.
         for(var i = this.smallArr.length; i < 5; i++) {
                 this.smallArr.push(0)
             }
@@ -25,43 +24,19 @@ class Fill {
     }
 //#endregion
 
-let harray //= new Array(3)
-let arr
-
 try {
-    arr = new Fill(harray)
+    let arr = new Fill()
 } catch (e) {
     //document.write(e.message)
 }
 
-//#region factorialize function
- /*                     First way I learned to make this function.
-function factorialize(num) {
-    let result = 1
-	for (let i = 1; i <= num ; i++){
-		result *= i;
-	}
-	return result;
-} 
-                     Second way I learned to make this function.
-function factorialize(num) {		 
-	if (num == 1 || !num){
-      return 1}
-	return num * factorialize(num-1)
-} */
-                // Most recent way I've learned to make this function.
-// let factorialize = (num) => {		
-// 	return (num === 1 || num === 0 ? 1 : num * factorialize(num - 1))
-// }
-//#endregion
-
-//$( () => {                                 // Old jQuery stuff
+//$( () => {                      // Old jQuery stuff
 //})
-
-window.onload = function() {                // Main outputs for index.html
+window.onload = function() {     // Main outputs for index.html
     let stringArr = JSON.stringify(arr, null, 3)
 
     let outputDOM = document.getElementById('output')
+
     outputDOM.innerHTML = '<p> ' + stringArr + ' </p>' 
     //$('#output').text(stringArr)
     
@@ -70,16 +45,9 @@ window.onload = function() {                // Main outputs for index.html
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>') 
     
     arr.makeAllOneNum(1)
-   
-    var obj = {};
-    Object.defineProperty(obj, "x", {value:0, writable:false});
-    console.log(obj.x)
-    //obj.x = 3.14;
-    
     outputDOM.innerHTML += '<p>[ ' + arr.smallArr + ' ]</p>';
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
 
-    
     //#region playing with setTimeout
     // let timeout = setTimeout(() => {
     //     alert( arr.smallArr[0] ** 2 == 1 ? 'hi Dan' : 'bye Dan')
@@ -92,30 +60,6 @@ window.onload = function() {                // Main outputs for index.html
     // }, 2000)
     //#endregion
 
-    //#region Closure example to access, increase a local variable in the self-invoked function.
-    //  let chgCounterClosure = ( () => {
-    //      let counter = 0
-    //      return {
-    //          count: function(){
-    //              return counter
-    //          },
-    //          inc: function() {
-    //              counter++
-    //          },
-    //          dec: function() {
-    //              counter--
-    //          }
-    //      }
-    //  })()
-     
-    //  chgCounterClosure.count()
-    //  chgCounterClosure.inc()
-    //  chgCounterClosure.inc()
-    //  chgCounterClosure.count()
-    //  chgCounterClosure.dec()
-
-    // document.getElementById('output').innerHTML += '<br/>' + chgCounterClosure.count()
-    //#endregion
     //#region   IIFEs  
     // (function () {
     //     console.log("My favorite number is 3");
@@ -130,34 +74,6 @@ window.onload = function() {                // Main outputs for index.html
     //#endregion
 
     //#region    Test code region 
-    // document.getElementById('output').innerHTML += largestOfFour()
-
-        //Example of using continue in a for loop to jump over certain numbers & keep them from 
-        //  adding to the text string to later output to the screen.
-    // var text = "";
-    // var i;
-    // for (i = 1; i < 10; i++) {
-    //     if (i === 5 || i === 7) continue
-    //     text += i + "<br>"
-    // }
-
-    // document.getElementById("output").innerHTML += text
-
-    // let person = {
-    //     firstName:"John",
-    //     lastName: "Doe",
-    //     fullName: function() {
-    //         return this.firstName + " " + this.lastName
-    //     }
-    // }
-
-    // let myObject = {
-    //     firstName:"Mary",
-    //     lastName: "Doe"
-    // }
-
-    // document.getElementById("output").innerHTML += person.fullName.call(myObject)
-
     const a = Object.freeze(['11','22','33']);
     const [n, ...nums] = a;   
 
@@ -166,7 +82,6 @@ window.onload = function() {                // Main outputs for index.html
     const head = ([x, ...rest]) => rest
 
     console.log(head(a))
-
 
         /**
          * JSDOC comment
@@ -182,7 +97,6 @@ window.onload = function() {                // Main outputs for index.html
     const add3 = add(3)
     console.log(add3(9))
 
-
         /**
          * JSDOC comment
          * @param {Function} funcz
@@ -193,59 +107,9 @@ window.onload = function() {                // Main outputs for index.html
     console.log(add9(9))
 // https://www.youtube.com/watch?v=FYXpOjwYzcs   34 min mark
 
+    var obj = {};
+    Object.defineProperty(obj, "x", {value:0, writable:false});
+    console.log(obj.x)
+    //obj.x = 3.14;
     //#endregion
 }
-
-//#region saved VS code settings
-// User settings
-// {
-//     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-//     "workbench.activityBar.visible": true,
-//     "window.menuBarVisibility": "default",
-//     "editor.wordWrap": "on",
-//     "window.zoomLevel": 0.1,
-//     "git.autofetch": true,
-//     "diffEditor.ignoreTrimWhitespace": true
-// }
-
-//Keybindings.JSON
-// Place your key bindings in this file to overwrite the defaults
-// [
-//     {
-//         "key": "ctrl+w",
-//         "command": "workbench.action.toggleZenMode"
-//     },
-//     {
-//         "key": "ctrl+k z",
-//         "command": "-workbench.action.toggleZenMode"
-//     },
-//     {
-//         "key": "ctrl+alt+s",
-//         "command": "workbench.action.files.saveAll"
-//     },
-//     {
-//         "key": "ctrl+k s",
-//         "command": "-workbench.action.files.saveAll"
-//     },
-//     {
-//         "key": "ctrl+g",
-//         "command": "editor.foldAll",
-//         "when": "editorTextFocus"
-//     },
-//     {
-//         "key": "ctrl+k ctrl+0",
-//         "command": "-editor.foldAll",
-//         "when": "editorTextFocus"
-//     },
-//     {
-//         "key": "ctrl+l",
-//         "command": "editor.unfoldAll",
-//         "when": "editorTextFocus"
-//     },
-//     {
-//         "key": "ctrl+k ctrl+j",
-//         "command": "-editor.unfoldAll",
-//         "when": "editorTextFocus"
-//     }
-// ]
-//#endregion
