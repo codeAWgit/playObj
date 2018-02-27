@@ -1,8 +1,5 @@
 'use strict';
-function clrWork() {
-    document.getElementById("output").style.display = "none"
-    document.getElementById("output2").style.display = "none"
-}
+
 //#region class Fill constructor 
 class Fill {
     /**
@@ -24,10 +21,10 @@ class Fill {
     }
 //#endregion
 
-try {
-    let arr = new Fill()
-} catch (e) {
-    //document.write(e.message)
+let arr = new Fill()
+
+try {} 
+catch (e) {//document.write(e.message)
 }
 
 //$( () => {                      // Old jQuery stuff
