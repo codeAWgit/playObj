@@ -107,7 +107,7 @@ window.onload = function() {     // Main outputs for index.html
     var obj = {};
     Object.defineProperty(obj, "x", {value:0, writable:false});
     console.log(obj.x)
-    //obj.x = 3.14;
+    //obj.x = 3.14;  This is not allowed because use strict is in use.    
     
     function f() {
         return this.a;
