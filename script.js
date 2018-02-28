@@ -108,5 +108,17 @@ window.onload = function() {     // Main outputs for index.html
     Object.defineProperty(obj, "x", {value:0, writable:false});
     console.log(obj.x)
     //obj.x = 3.14;
+    
+    function f() {
+        return this.a;
+      }
+      
+    var g = f.bind({a: this.a});
+    console.log(g());
+
+    var h = g.bind({a: 'lens'});
+    console.log(h())
+      
+
     //#endregion
 }
