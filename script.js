@@ -27,9 +27,10 @@ try {}
 catch (e) {//document.write(e.message)
 }
 
-//$( () => {                      // Old jQuery stuff
+//$( () => {                      
 //})
-//window.onload = function() {     // Main outputs for index.html
+//window.onload = function() {     // Not using currently due to defer attr. in external 
+                                    // script file tag in index.html.
     let stringArr = JSON.stringify(arr, null, 3)
 
     let outputDOM = document.getElementById('output')
@@ -45,6 +46,18 @@ catch (e) {//document.write(e.message)
     outputDOM.innerHTML += '<p>[ ' + arr.smallArr + ' ]</p>';
     //$('#output').append('<div>[ ' + arr.smallArr + ' ]</div>')
 
+    $("#anima").click(function(){
+        $("#output").animate({
+            left: '220px',
+            opacity: '0.75',
+            fontSize: '179%'
+        });
+    }); 
+
+    $("#tog").click( function() {
+        $("h4:odd").toggle();
+    }); 
+
     //#region playing with setTimeout
     // let timeout = setTimeout(() => {
     //     alert( arr.smallArr[0] ** 2 == 1 ? 'hi Dan' : 'bye Dan')
@@ -57,20 +70,6 @@ catch (e) {//document.write(e.message)
     // }, 2000)
     //#endregion
 
-    //#region   IIFEs  
-    // (function () {
-    //     console.log("My favorite number is 3");
-    //   })()
-
-    // let favNumber
-    // (favNumber = function(num = 4) {
-    //     console.log("My favorite number is " + num);
-    //   })()
-      
-    // favNumber(11)
-    //#endregion
-
-    //#region    Test code region 
     const a = Object.freeze(['11','22','33']);
     const [n, ...nums] = a;   
 
@@ -112,32 +111,11 @@ catch (e) {//document.write(e.message)
     function f() {
         return this.a;
       }
-      
-    var g = f.bind({a: this.a});
+
+    var g = f.bind({a: 'unicycle'});
     console.log(g());
 
     var h = g.bind({a: 'lens'});
     console.log(h())
-     
-    function convertToRoman(num) {
-        num = '0'.repeat(4 - String(num).length) + String(num)
-        let lettersToUse = [['_X','_V','M'],['M','D','C'],['C','L','X'],['X','V','I'],'']                 
-    
-        for(let i = 0, len = num.length ; i < len ; i++){
-            if (+num[i] === 0) continue
-            lettersToUse[4] += buildRoman(+num[i], ...lettersToUse[i])
-        }
-    
-        function buildRoman(digit, t, f, o){
-            return (digit === 9) ? o + t :
-                    (digit === 4) ? o + f :
-                    (digit === 5) ? f :
-                    (digit < 4) ? o.repeat(digit) :
-                    f + o.repeat(digit - 5)
-        }
-        return lettersToUse[4]
-    }
-    
-    console.log(convertToRoman(2));
     //#endregion
 //}
