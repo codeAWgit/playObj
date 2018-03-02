@@ -74,7 +74,7 @@ window.onload = function() {     // Main outputs for index.html
     const a = Object.freeze(['11','22','33']);
     const [n, ...nums] = a;   
 
-    console.log(n)
+    //console.log(n)
 
     const head = ([x, ...rest]) => rest
 
@@ -92,7 +92,7 @@ window.onload = function() {     // Main outputs for index.html
         return y => x + y
     }
     const add3 = add(3)
-    console.log(add3(9))
+    //console.log(add3(9))
 
         /**
          * JSDOC comment
@@ -101,12 +101,12 @@ window.onload = function() {     // Main outputs for index.html
          */
     const partial = (funcz, a) => funcz(a)
     const add9 = partial(add, 9)
-    console.log(add9(9))
+    //console.log(add9(9))
 // https://www.youtube.com/watch?v=FYXpOjwYzcs   34 min mark
 
     var obj = {};
     Object.defineProperty(obj, "x", {value:0, writable:false});
-    console.log(obj.x)
+    //console.log(obj.x)
     //obj.x = 3.14;  This is not allowed because use strict is in use.    
     
     function f() {
@@ -118,6 +118,31 @@ window.onload = function() {     // Main outputs for index.html
 
     var h = g.bind({a: 'lens'});
     console.log(h())
+     
+    function convertToRoman(num) {
+        num = '0'.repeat(4 - String(num).length) + String(num)
+        let fStr = '', len = num.length
+    
+        for(let i = 0 ; i < len ; i++){
+            if (+num[i] === 0) continue
+            let lettersToUse = (i === 3) ? ['X','V','I'] :
+                                (i === 2) ? ['C','L','X'] :
+                                (i === 1) ? ['M','D','C'] :
+                                ['_X_','_V_','M']
+            fStr += buildRoman(num[i], ...lettersToUse)
+        }
+    
+        function buildRoman(digit, t, f, o){
+            return (digit === '9') ? o + t :
+                    (digit === '4') ? o + f :
+                    (digit === '5') ? f :
+                    (+digit < 4) ? o.repeat(+digit) :
+                    f + o.repeat(+digit - 5)
+        }
+        return fStr
+    }
+      
+    console.log(convertToRoman(16));
       
 
     //#endregion
