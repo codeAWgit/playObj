@@ -29,7 +29,7 @@ catch (e) {//document.write(e.message)
 
 //$( () => {                      // Old jQuery stuff
 //})
-window.onload = function() {     // Main outputs for index.html
+//window.onload = function() {     // Main outputs for index.html
     let stringArr = JSON.stringify(arr, null, 3)
 
     let outputDOM = document.getElementById('output')
@@ -121,29 +121,23 @@ window.onload = function() {     // Main outputs for index.html
      
     function convertToRoman(num) {
         num = '0'.repeat(4 - String(num).length) + String(num)
-        let fStr = '', len = num.length
+        let lettersToUse = [['_X','_V','M'],['M','D','C'],['C','L','X'],['X','V','I'],'']                 
     
-        for(let i = 0 ; i < len ; i++){
+        for(let i = 0, len = num.length ; i < len ; i++){
             if (+num[i] === 0) continue
-            let lettersToUse = (i === 3) ? ['X','V','I'] :
-                                (i === 2) ? ['C','L','X'] :
-                                (i === 1) ? ['M','D','C'] :
-                                ['_X_','_V_','M']
-            fStr += buildRoman(num[i], ...lettersToUse)
+            lettersToUse[4] += buildRoman(+num[i], ...lettersToUse[i])
         }
     
         function buildRoman(digit, t, f, o){
-            return (digit === '9') ? o + t :
-                    (digit === '4') ? o + f :
-                    (digit === '5') ? f :
-                    (+digit < 4) ? o.repeat(+digit) :
-                    f + o.repeat(+digit - 5)
+            return (digit === 9) ? o + t :
+                    (digit === 4) ? o + f :
+                    (digit === 5) ? f :
+                    (digit < 4) ? o.repeat(digit) :
+                    f + o.repeat(digit - 5)
         }
-        return fStr
+        return lettersToUse[4]
     }
-      
-    console.log(convertToRoman(16));
-      
-
+    
+    console.log(convertToRoman(2));
     //#endregion
-}
+//}

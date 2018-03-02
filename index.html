@@ -13,8 +13,7 @@
         <script src="file://C:/Users/A/Documents/GitHub/playObj/script.js"></script>
     -->
     <link rel="stylesheet" href="style.css">
-    
-
+    <script defer='true' src="script.js"></script>
 </head>
 
 <body>
@@ -32,13 +31,19 @@
             <h4 id="output2"></h4>
         </aside>
         <footer class="footer">
+            <div>
+            <button onclick="document.getElementById('output').style.visibility='visible'">Main</button>
             <button onclick="document.getElementById('output').style.visibility='hidden'">Hide Main</button>
+            </div>
+            <div>
+            <button onclick="document.getElementById('output2').style.visibility='visible'">Side</button>   
             <button onclick="document.getElementById('output2').style.visibility='hidden'">Hide Side</button>
+            </div>
+
         </footer>
         <div class="filler"></div>        
     </div>
 </body>
-<script src="script.js"></script>
 </html>
 
 <!--    Code written by Adam Hobson.    -->
