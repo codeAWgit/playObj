@@ -117,5 +117,21 @@ catch (e) {//document.write(e.message)
 
     var h = g.bind({a: 'lens'});
     console.log(h())
+
+
+    function theSameOldFoo(name){ 
+        name = name || 'Bar';
+        //name = name && 'Bar';
+        console.log("My best friend's name is " + name);
+      }
+      
+      theSameOldFoo(); 
+      theSameOldFoo('Beau'); 
+
+      var myNumber = 15;
+      console.log(myNumber.toString(16),  // returns 80
+      myNumber.toString(8),   // returns 200
+      myNumber.toString(2))   // returns 10000000
+
     //#endregion
 //}
