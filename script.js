@@ -134,4 +134,54 @@ catch (e) {//document.write(e.message)
       myNumber.toString(2))   // returns 10000000
 
     //#endregion
-//}
+// //}
+
+// {
+//     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+//     "workbench.activityBar.visible": true,
+//     "window.menuBarVisibility": "default",
+//     "editor.wordWrap": "on",
+//     "window.zoomLevel": 0.2,
+//     "git.autofetch": true,
+//     "diffEditor.ignoreTrimWhitespace": true,
+//     "git.confirmSync": false
+// }
+
+// [
+//     {
+//         "key": "ctrl+w",
+//         "command": "workbench.action.toggleZenMode"
+//     },
+//     {
+//         "key": "ctrl+k z",
+//         "command": "-workbench.action.toggleZenMode"
+//     },
+//     {
+//         "key": "ctrl+alt+s",
+//         "command": "workbench.action.files.saveAll"
+//     },
+//     {
+//         "key": "ctrl+k s",
+//         "command": "-workbench.action.files.saveAll"
+//     },
+//     {
+//         "key": "ctrl+g",
+//         "command": "editor.foldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+k ctrl+0",
+//         "command": "-editor.foldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+l",
+//         "command": "editor.unfoldAll",
+//         "when": "editorTextFocus"
+//     },
+//     {
+//         "key": "ctrl+k ctrl+j",
+//         "command": "-editor.unfoldAll",
+//         "when": "editorTextFocus"
+//     }
+// ]
