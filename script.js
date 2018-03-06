@@ -48,7 +48,7 @@ catch (e) {//document.write(e.message)
 
     $("#anima").click(function(){
         $("#output").animate({
-            left: '220px',
+            left: '120px',
             opacity: '0.75',
             fontSize: '179%'
         });
@@ -58,22 +58,11 @@ catch (e) {//document.write(e.message)
         $("h4:odd").toggle();
     }); 
 
-    //#region playing with setTimeout
-    // let timeout = setTimeout(() => {
-    //     alert( arr.smallArr[0] ** 2 == 1 ? 'hi Dan' : 'bye Dan')
-        
-    //     arr.otherKey = "About done with " + //<--Preferred way to line
-    //     "this timeout."                        //-break a string in JS.
-    //     //$('#output').append(arr.otherKey)   
-    //     $('#output').append('<br/><p>Five factorial is: ' + 
-    //                         factorialize(5) + '</p>')
-    // }, 2000)
-    //#endregion
-
+    //#region 
     const a = Object.freeze(['11','22','33']);
-    const [n, ...nums] = a;   
+    const [n, nums] = a;   
 
-    //console.log(n)
+    console.log(nums)
 
     const head = ([x, ...rest]) => rest
 
@@ -113,36 +102,36 @@ catch (e) {//document.write(e.message)
         name = name || 'Bar';
         //name = name && 'Bar';
         console.log("My best friend's name is " + name);
-      }
-      
-      theSameOldFoo(); 
-      theSameOldFoo('Beau'); 
+    }
+    
+    theSameOldFoo(); 
+    theSameOldFoo('Beau'); 
 
-      var myNumber = 15;
-      console.log(myNumber.toString(16),  // returns 80
-      myNumber.toString(8),   // returns 200
-      myNumber.toString(2))   // returns 10000000
+    var myNumber = 15;
+    console.log(myNumber.toString(16),  // returns 80
+    myNumber.toString(8),   // returns 200
+    myNumber.toString(2))   // returns 10000000
 
 
-      function template(strings, ...keys) {
-        return (function(...values) {
-          var dict = values[values.length - 1] || {};
-          console.log(dict)
-          var result = [strings[0]];
-          keys.forEach(function(key, i) {
-            console.log(key)
-            var value = Number.isInteger(key) ? values[key] : dict[key];
-            console.log('hi', value, strings[i + 1]);
-            result.push(value, strings[i + 1]);
-          });
-          return result.join('');
+    function template(strings, ...keys) {
+    return (function(...values) {
+        var dict = values[values.length - 1] || {};
+        console.log(dict)
+        var result = [strings[0]];
+        keys.forEach(function(key, i) {
+        console.log(key)
+        var value = Number.isInteger(key) ? values[key] : dict[key];
+        console.log('hi', value, strings[i + 1]);
+        result.push(value, strings[i + 1]);
         });
-      }
-      
-      var t1Closure = template`${0}${1}${0}!`;
-      console.log(t1Closure('Y', 'A'));  // "YAY!"
-      var t2Closure = template`${0} ${'foo'}!`;
-      console.log(t2Closure('Hello', {foo: 'World'}));  // "Hello World!"
+        return result.join('');
+    });
+    }
+    
+    var t1Closure = template`${0}${1}${0}!`;
+    console.log(t1Closure('Y', 'A'));  // "YAY!"
+    var t2Closure = template`${0} ${'foo'}!`;
+    console.log(t2Closure('Hello', {foo: 'World'}));  // "Hello World!"
 
     //#endregion
 // //}
