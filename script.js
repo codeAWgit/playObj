@@ -116,12 +116,9 @@ catch (e) {//document.write(e.message)
     function template(strings, ...keys) {
     return (function(...values) {
         var dict = values[values.length - 1] || {};
-        console.log(dict)
         var result = [strings[0]];
         keys.forEach(function(key, i) {
-        console.log(key)
         var value = Number.isInteger(key) ? values[key] : dict[key];
-        console.log('hi', value, strings[i + 1]);
         result.push(value, strings[i + 1]);
         });
         return result.join('');
