@@ -128,7 +128,11 @@ catch (e) {//document.write(e.message)
     var t1Closure = template`${0}${1}${0}!`;
     console.log(t1Closure('Y', 'A'));  // "YAY!"
     var t2Closure = template`${0} ${'foo'}!`;
-    console.log(t2Closure('Hello', {foo: 'World'}));  // "Hello World!"
+    var tmp = t2Closure('Hello', {foo: 'World'})  // "Hello World!"
+
+    console.log(typeof tmp)
+    console.log(tmp.valueOf())
+    console.log(tmp.toString()) 
 
     //#endregion
 // //}
