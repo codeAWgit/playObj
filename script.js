@@ -126,13 +126,22 @@ catch (e) {//document.write(e.message)
     }
     
     var t1Closure = template`${0}${1}${0}!`;
-    console.log(t1Closure('Y', 'A'));  // "YAY!"
+    //console.log(t1Closure('Y', 'A'));  // "YAY!"
     var t2Closure = template`${0} ${'foo'}!`;
-    var tmp = t2Closure('Hello', {foo: 'World'})  // "Hello World!"
+    //tmp = t2Closure('Hello', {foo: 'World'}));  // "Hello World!"
 
-    console.log(typeof tmp)
-    console.log(tmp.valueOf())
-    console.log(tmp.toString()) 
+    // console.log(typeof tmp)
+    // console.log(tmp.valueOf())
+    // console.log(tmp.toString()) 
+
+    
+    function bin2dec(bin){
+        return parseInt(bin, 2);
+    }
+    bin2dec(101);
+
+    var x = document.getElementsByClassName("intro");
+    console.log(x)
 
     //#endregion
 // //}
