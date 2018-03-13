@@ -150,6 +150,13 @@ catch (e) {//document.write(e.message)
     var x = document.getElementsByClassName("intro");
     console.log(x)
 
+
+    const voxel = { start: {xa: 5, ya: 'now?'}, end:{za: 1}}
+
+    const {start: { xa: aa, ya: bb}, end: {za: cc}} = voxel
+
+    console.log(x = 10)
+
     //#endregion
 // //}
 
