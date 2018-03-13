@@ -1,4 +1,11 @@
-'use strict';
+'use strict'
+
+// import * as lib from 'lib'
+
+// Since this won't work without Babel or Typescript or other transpiler I just added another script line to the html file. Likely the way it was done in the past. The downside is that it has to run the whole file instead of just importing the few parts that yu might really want.
+
+// console.log(lib)
+console.log(square(8))
 
 //#region class Fill constructor 
 class Fill {
@@ -35,7 +42,7 @@ catch (e) {//document.write(e.message)
 
     let outputDOM = document.getElementById('output')
 
-    outputDOM.innerHTML = '<p> ' + stringArr + ' </p>' 
+    outputDOM.innerHTML += '<p> ' + stringArr + ' </p>' 
     //$('#output').text(stringArr)
     
     arr.makeFive()
