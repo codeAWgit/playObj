@@ -157,7 +157,34 @@ catch (e) {//document.write(e.message)
 
     console.log(x = 10)
 
+
+
+    function steamrollArray(arr) {
+        let rsltArr = []
+        
+        arr.forEach( x => {
+            if ( !Array.isArray( x ) ) {
+                rsltArr.push( x )
+            }
+            else {
+                let tmp = steamrollArray( x )
+                tmp.forEach( y => rsltArr.push( y ) )
+            }
+        })
+        
+        return rsltArr
+    }
+      
+    console.log( steamrollArray( [1,[2]] ) )  
+    console.log( steamrollArray( [[["a"]], [["b"]]] ) )  
+
+    outputDOM.innerHTML += steamrollArray([[["a"]], [["b"]]])
+
+    outputDOM.innerHTML += `<br /><br />[ ${[[["a"]], [["b"]]]} ]`;
+
     //#endregion
+
+    //#region VS code saved settings 
 // //}
 
 // {
@@ -209,3 +236,4 @@ catch (e) {//document.write(e.message)
 //         "when": "editorTextFocus"
 //     }
 // ]
+//#endregion
