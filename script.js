@@ -147,40 +147,18 @@ catch (e) {//document.write(e.message)
     }
     bin2dec(101);
 
-    var x = document.getElementsByClassName("intro");
-    console.log(x)
-
-
-    const voxel = { start: {xa: 5, ya: 'now?'}, end:{za: 1}}
-
-    const {start: { xa: aa, ya: bb}, end: {za: cc}} = voxel
-
-    console.log(x = 10)
-
-
-
-    function steamrollArray(arr) {
-        let rsltArr = []
-        
-        arr.forEach( x => {
-            if ( !Array.isArray( x ) ) {
-                rsltArr.push( x )
-            }
-            else {
-                let tmp = steamrollArray( x )
-                tmp.forEach( y => rsltArr.push( y ) )
-            }
-        })
-        
-        return rsltArr
-    }
+    var handler = {
+        get (target, key) {
+            return key in target ? target[key] : 37;
+        }
+    };
       
-    console.log( steamrollArray( [1,[2]] ) )  
-    console.log( steamrollArray( [[["a"]], [["b"]]] ) )  
-
-    outputDOM.innerHTML += steamrollArray([[["a"]], [["b"]]])
-
-    outputDOM.innerHTML += `<br /><br />[ ${[[["a"]], [["b"]]]} ]`;
+    var p = new Proxy({}, handler);
+    p.a = 1;
+    p.b = undefined;
+    
+    console.log(p.a, p.b);   // 1 undefined
+    console.log('c' in p, p.c);  // ____  __
 
     //#endregion
 
